@@ -23,9 +23,7 @@ echo "Building the code..."
 stage('Test'){
 steps{
 echo "Testing the code..."
-dir("${env.BIGROBOT_LOG_PATH}") {
 bat "run.bat"
-}
 }
 }
 stage('Compile'){
