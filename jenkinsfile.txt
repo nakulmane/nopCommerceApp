@@ -6,7 +6,7 @@ agent any
 
 environment {
 BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL = "${relPath}"
-BIGROBOT_LOG_PATH = "${'/testlogs/' + logPath}"
+BIGROBOT_LOG_PATH = "${'/testData/' + logPath}"
 }
 stages{
 stage("Initialize") {
