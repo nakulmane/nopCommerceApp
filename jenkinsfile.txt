@@ -29,6 +29,13 @@ bat "run.bat"
 }
 }
 }
+stage('checkout') {
+checkout([
+$class: 'GitSCM',
+branches: [[name: "*/dmf-8.0.0"]],
+userRemoteConfigs: [[url: 'https://github.com/nakulmane/nopCommerceApp.git']]
+])
+}
 stage('Compile'){
 steps{
 echo "Compiling the code..."
