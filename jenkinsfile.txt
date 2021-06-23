@@ -6,13 +6,13 @@ agent any
 
 environment {
 BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL = "${relPath}"
-BIGROBOT_LOG_PATH = "${logPath}"
+BIGROBOT_LOG_PATH = "${'/testlogs/' + logPath}"
 }
 stages{
 stage("Initialize") {
 steps{
 echo "BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL: ${relPath}"
-echo "BIGROBOT_LOG_PATH: ${logPath}"
+echo "BIGROBOT_LOG_PATH: ${env.BIGROBOT_LOG_PATH}"
 }
 }
 stage('Build'){
@@ -23,6 +23,9 @@ echo "Building the code..."
 stage('Test'){
 steps{
 echo "Testing the code..."
+dir("${env.BIGROBOT_LOG_PATH}") {
+sh "ls -l"
+}
 }
 }
 stage('Compile'){
