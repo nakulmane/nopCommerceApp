@@ -6,7 +6,7 @@ agent any
 
 environment {
 BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL = "${relPath}"
-BIGROBOT_LOG_PATH = "${'/testData/' + logPath}"
+BIGROBOT_LOG_PATH = "${'/nopCommerceApp/testData/'}"
 }
 stages{
 stage("Initialize") {
@@ -24,7 +24,7 @@ stage('Test'){
 steps{
 echo "Testing the code..."
 dir("${env.BIGROBOT_LOG_PATH}") {
-sh "cd ..; rm deleteFile.txt"
+sh "rm deleteFile.txt"
 }
 }
 }
