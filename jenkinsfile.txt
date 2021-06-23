@@ -6,7 +6,7 @@ agent any
 
 environment {
 BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL = "${relPath}"
-BIGROBOT_LOG_PATH = "${'/nopCommerceApp/testData/'}"
+BIGROBOT_LOG_PATH = "${'/testData/'}"
 }
 stages{
 stage("Initialize") {
@@ -23,6 +23,7 @@ echo "Building the code..."
 stage('Test'){
 steps{
 echo "Testing the code..."
+dir("${env.BIGROBOT_LOG_PATH}")
 bat "run.bat"
 }
 }
