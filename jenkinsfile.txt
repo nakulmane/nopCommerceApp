@@ -7,7 +7,7 @@ agent any
 environment {
 BIGROBOT_PATH = "${'/Users/GS-2736/.jenkins/workspace/Jenkins_Declarative_Pipelines'}"
 BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL = "${relPath}"
-BIGROBOT_LOG_PATH = "${env.BIGROBOT_PATH + '/testData/'}"
+BIGROBOT_LOG_PATH = "${env.BIGROBOT_PATH + '/utilities/__pycache__/'}"
 }
 stages{
 stage("Initialize") {
@@ -41,6 +41,8 @@ userRemoteConfigs: [[url: 'https://github.com/nakulmane/nopCommerceApp.git']]
 stage('Compile'){
 steps{
 echo "Compiling the code..."
+dir("${env.BIGROBOT_LOG_PATH}") {
+bat "run.bat"
 }
 }
 stage('Deploy'){
