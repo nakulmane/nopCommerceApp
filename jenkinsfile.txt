@@ -2,7 +2,16 @@ def relPath = 'testsuites-controller_upgrade_service_' + UUID.randomUUID().toStr
 
 pipeline{
 agent any
+
+environment {
+BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL = "${relPath}"
+}
 stages{
+stage("Initialize") {
+steps{
+echo "BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL: ${relPath}"
+}
+}
 stage('Build'){
 steps{
 echo "Building the code..."
