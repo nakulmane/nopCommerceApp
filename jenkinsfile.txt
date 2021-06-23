@@ -24,7 +24,7 @@ stage('Test'){
 steps{
 echo "Testing the code..."
 dir("${env.BIGROBOT_LOG_PATH}") {
-sh "rm deleteFile.txt"
+sh "cd ..; rm deleteFile.txt"
 }
 }
 }
