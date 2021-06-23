@@ -12,7 +12,7 @@ stages{
 stage("Initialize") {
 steps{
 echo "BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL: ${relPath}"
-echo "BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL: ${logPath}"
+echo "BIGROBOT_LOG_PATH: ${logPath}"
 }
 }
 stage('Build'){
