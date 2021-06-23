@@ -5,8 +5,9 @@ pipeline{
 agent any
 
 environment {
+BIGROBOT_PATH = "\Users\GS-2736\.jenkins\workspace\Jenkins_Declarative_Pipelines"
 BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL = "${relPath}"
-BIGROBOT_LOG_PATH = "${'/testData/'}"
+BIGROBOT_LOG_PATH = "${env.BIGROBOT_PATH + '/testData/'}"
 }
 stages{
 stage("Initialize") {
