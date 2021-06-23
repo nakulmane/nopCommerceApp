@@ -31,7 +31,7 @@ bat "run.bat"
 }
 stage('Compile'){
 steps{
-echo "Compiling the code..."
+echo "Compiling the code from dmf-8.0.0..."
 }
 }
 stage('Deploy'){
