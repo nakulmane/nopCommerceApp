@@ -1,2 +1,2 @@
 cd ..
-ls -l
+dir
