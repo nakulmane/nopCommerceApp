@@ -14,6 +14,7 @@ stage("Initialize") {
 steps{
 echo "BIGROBOT_LOG_PATH_EXEC_INSTANCE_REL: ${relPath}"
 echo "BIGROBOT_LOG_PATH: ${env.BIGROBOT_LOG_PATH}"
+echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
 }
 }
 stage('Build'){
